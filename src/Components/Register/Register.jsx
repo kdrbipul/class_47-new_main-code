@@ -1,6 +1,6 @@
 
 import './Register.css'
-import { createUserWithEmailAndPassword, getAuth, sendEmailVerification } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, updateProfile } from "firebase/auth";
 import app from '../../Shared/Firebase/Firebase.config';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -48,6 +48,7 @@ const Register = () => {
             console.log(user);
             setLogSuccess(true);
             verifyEmail();
+            updateUserName(name);
             form.reset();
         })
         .catch(error =>console.log(error))
@@ -57,6 +58,16 @@ const Register = () => {
         sendEmailVerification(auth.currentUser)
         .then(()=>{
             alert('Please verify your email')
+        })
+    }
+
+    const updateUserName = (name) =>{
+        updateProfile(auth.currentUser,{
+            displayName: name
+        }).then(()=>{
+
+        }).error((error)=>{
+            error;
         })
     }
 
