@@ -38,8 +38,8 @@ const Register = () => {
             setPasswordError('Please Provide More Than 8 Characters');
             return false;
         }
-        setPasswordError('');
-
+        setPasswordError(' ');
+        // handleOnSubmit('');
 
         // console.log(name,email,password);
         createUserWithEmailAndPassword(auth, email, password)

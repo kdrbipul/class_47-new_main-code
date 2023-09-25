@@ -29,6 +29,11 @@ const Login = () => {
         .catch (error => console.log(error))
     }
 
+
+    const handleForgetPassword = () =>{
+
+    }
+
     return (
         <div className='container'>
             <form onSubmit={handleOnSubmit} className='w-50 mx-auto my-5 shadow p-5 background_col rounded-3'>
@@ -45,6 +50,7 @@ const Login = () => {
                     <input type="checkbox" name="checkbox" className="form-check-input"  />
                     <label className="form-check-label" >Check me out</label>
                 </div> */}
+                <p><span>Forget Password? <button onClick={handleForgetPassword} className='btn btn-link'>Please Reset Password</button></span></p>
                 <p>New User In a website <Link to='/register'>Please Register</Link></p>
                 <button type="submit" className="btn btn-primary w-100">Login</button>
                 {
