@@ -13,7 +13,7 @@ const auth = getAuth(app);
 const Login = () => {
     const [logSuccess, setLogSuccess] = useState(false);
     const [userEmail, setUserEmail] = useState('');
-    const [checkAlert, setCheckAlert] = useState('');
+    // const [checkAlert, setCheckAlert] = useState('');
 
     const handleOnSubmit=(e)=>{
         e.preventDefault();
@@ -46,7 +46,7 @@ const Login = () => {
         // Send Email Reset Password 
         sendPasswordResetEmail(auth, userEmail)
         .then(()=>{
-            setCheckAlert("Check You Email Address And Reset Password");
+            alert("Check You Email Address And Reset Password");
             // document.getElementById('error').classList.add('success')
         }).catch((error)=>{
             error;
@@ -57,9 +57,9 @@ const Login = () => {
         <div className='container w-50 mx-auto my-5 shadow p-5 rounded-3 background_col'>
             <form onSubmit={handleOnSubmit} className='  '>
                 <h4 className='text-center'>Please Login </h4>
-                {
+                {/* {
                     checkAlert
-                }
+                } */}
                 <div className="mb-3">
                     <label className="form-label">Email address</label>
                     <input onBlur = {handleEmailBlur} type="email" name='email' className="form-control"  aria-describedby="emailHelp" required />
